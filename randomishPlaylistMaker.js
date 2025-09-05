@@ -362,6 +362,7 @@
           const trackName = track.name;
           const trackAlbum = track.album.name;
           const trackArtist = track.artists[0].name;
+          const trackPlayable = track.is_playable;
 
           // Log details of the query and the track
           const queryDetails = {
@@ -369,6 +370,15 @@
             track: track,
           };
           allQueriesAndTracks.push(queryDetails);
+
+          //Check if track should be excluded because it's unplayable (unavailable)
+          if (trackPlayable == false) {
+            logToConsole(
+              `Track unplayable (unavailable): ${searchQuery}. Skipping.`
+            );
+            await new Promise((resolve) => setTimeout(resolve, API_DELAY)); // Extra cooldown when excluding a search result
+            return null;
+          }
 
           // Check if the track should be excluded using regular expressions
           const isExcluded = trackTitleStringsToExclude.some((titleRegex) =>
