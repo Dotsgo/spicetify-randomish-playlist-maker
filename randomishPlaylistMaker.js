@@ -716,7 +716,7 @@
     { set: "High Surrogates", min: 55296, max: 56191 }, // High Surrogates
     { set: "High Private Use Surrogates", min: 56192, max: 56319 }, // High Private Use Surrogates
     { set: "Low Surrogates", min: 56320, max: 57343 }, // Low Surrogates
-    { set: "Private Use", min: 57344, max: 63743 }, // Private Use
+    // Private Use   { set: "Private Use", min: 57344, max: 63743 },
     { set: "CJK Compatibility Ideographs", min: 63744, max: 64255 }, // CJK Compatibility Ideographs
     { set: "Alphabetic Presentation Forms", min: 64256, max: 64335 }, // Alphabetic Presentation Forms
     { set: "Arabic Presentation Forms-A", min: 64336, max: 65023 }, // Arabic Presentation Forms-A
